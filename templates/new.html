@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Record</title>
+</head>
+<body>
+	<form action="{{ request.path }}" method="POST">
+	
+	<table border="1">
+
+			<tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+			<tr><td>Address:</td><td><input type="text" name="addr"></td></tr>
+			<tr><td>City:</td><td><input type="text" name="city"></td></tr>
+			<tr><td>Pin:</td><td><input type="text" name="pin"></td></tr>	
+	</table>
+	<input type="submit" name="" value="Add Record">
+	</form>
+	<a href="{{ url_for('show_all') }}">Go Back</a>
+</body>
+</html>

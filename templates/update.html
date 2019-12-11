@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+
+</head>
+<body>
+    <form action="{{url_for('update_info')}}" method="POST">
+	<table border="1">
+			<input type="hidden" value="{{id_info}}" name="id">
+			<tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+			<tr><td>Address:</td><td><input type="text" name="addr"></td></tr>
+			<tr><td>City:</td><td><input type="text" name="city"></td></tr>
+			<tr><td>Pin:</td><td><input type="text" name="pin"></td></tr>
+
+	</table>
+	<input type="submit" name="" value="update">
+	</form>
+	<a href="{{ url_for('show_all') }}">Go Back</a>
+</body>
+</html>

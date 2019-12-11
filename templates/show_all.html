@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Record</title>
+</head>
+<body>
+	<h2>Student Records</h2>
+	<hr>
+
+	<a href="{{url_for('new')}}">Add record</a>
+
+	<table border="1">
+	
+		<tr>
+			<td>Name:</td>
+			<td>Address:</td>
+			<td>City:</td>
+			<td>Pin:</td>
+			<td>Operations</td>
+		</tr>
+	{% for student in students %}
+		<tr>
+            <td>{{student.name}}</td>
+			<td>{{student.addr}}</td>
+			<td>{{student.city}}</td>
+			<td>{{student.pin}}</td>
+			<td>
+				<!--Update and Delete Buttons-->
+				<form action="{{url_for('update')}}" method="POST">
+					<input type="submit" value="Update">
+					<input type="hidden" name="id" value="{{ student.id }}">
+				</form>
+				<form method="post" action="{{url_for('delete')}}">
+					<input type="submit" value="delete">
+					<input type="hidden" name="dlt" value="{{ student.id }}">
+				</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+</body>
+</html>
